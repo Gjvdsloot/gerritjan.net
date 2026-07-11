@@ -1,76 +1,167 @@
+<script setup lang="ts">
+const navigation = [
+  { label: 'Home', to: '#home' },
+  { label: 'Over mij', to: '#about' },
+  { label: 'Contact', to: '#contact' }
+]
+</script>
+
 <template>
-  <div>
-    <UPageHero
-      title="Nuxt Starter Template"
-      description="A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours."
-      :links="[{
-        label: 'Get started',
-        to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-        target: '_blank',
-        trailingIcon: 'i-lucide-arrow-right',
-        size: 'xl'
-      }, {
-        label: 'Use this template',
-        to: 'https://github.com/nuxt-ui-templates/starter',
-        target: '_blank',
-        icon: 'i-simple-icons-github',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle'
-      }]"
-    />
+  <div class="min-h-screen bg-default" id="home">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-default bg-default/80 backdrop-blur">
+      <UContainer class="flex h-16 items-center justify-between">
+        <NuxtLink
+          to="/"
+          class="text-lg font-semibold tracking-tight"
+        >
+          Gerritjan.net
+        </NuxtLink>
 
-    <UPageSection
-      id="features"
-      title="Everything you need to build modern Nuxt apps"
-      description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
-      :features="[{
-        icon: 'i-lucide-rocket',
-        title: 'Production-ready from day one',
-        description: 'Pre-configured with TypeScript, ESLint, Tailwind CSS, and all the best practices. Focus on building features, not setting up tooling.'
-      }, {
-        icon: 'i-lucide-palette',
-        title: 'Beautiful by default',
-        description: 'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.'
-      }, {
-        icon: 'i-lucide-zap',
-        title: 'Lightning fast',
-        description: 'Optimized for performance with SSR/SSG support, automatic code splitting, and edge-ready deployment. Your users will love the speed.'
-      }, {
-        icon: 'i-lucide-blocks',
-        title: '100+ components included',
-        description: 'Access Nuxt UI\'s comprehensive component library. From forms to navigation, everything is accessible, responsive, and customizable.'
-      }, {
-        icon: 'i-lucide-code-2',
-        title: 'Developer experience first',
-        description: 'Auto-imports, hot module replacement, and TypeScript support. Write less boilerplate and ship more features.'
-      }, {
-        icon: 'i-lucide-shield-check',
-        title: 'Built for scale',
-        description: 'Enterprise-ready architecture with proper error handling, SEO optimization, and security best practices built-in.'
-      }]"
-    />
+        <div class="flex items-center gap-6">
 
-    <UPageSection>
-      <UPageCTA
-        title="Ready to build your next Nuxt app?"
-        description="Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today."
-        variant="subtle"
-        :links="[{
-          label: 'Start building',
-          to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-          target: '_blank',
-          trailingIcon: 'i-lucide-arrow-right',
-          color: 'neutral'
-        }, {
-          label: 'View on GitHub',
-          to: 'https://github.com/nuxt-ui-templates/starter',
-          target: '_blank',
-          icon: 'i-simple-icons-github',
-          color: 'neutral',
-          variant: 'outline'
-        }]"
-      />
-    </UPageSection>
+          <UNavigationMenu
+            :items="navigation"
+            orientation="horizontal"
+          />
+
+          <UButton
+            variant="ghost"
+            to="cv-gerritjan-van-der-sloot.pdf"
+            target="_blank"
+            trailing-icon="i-lucide-arrow-up-right"
+          >
+            Download CV
+          </UButton>
+
+          <UButton
+            icon="i-simple-icons-linkedin"
+            variant="ghost"
+            color="neutral"
+            to="https://www.linkedin.com/in/gerritjan-van-der-sloot/"
+            target="_blank"
+            aria-label="LinkedIn"
+          />
+
+          <UButton
+            icon="i-simple-icons-github"
+            variant="ghost"
+            color="neutral"
+            to="https://github.com/Gjvdsloot"
+            target="_blank"
+            aria-label="GitHub"
+          />
+        </div>
+      </UContainer>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <UContainer class="py-20">
+        <section class="grid items-center gap-12 lg:grid-cols-2">
+
+          <!-- Tekst -->
+          <div>
+            <div class="flex flex-wrap items-center gap-4">
+              <h1 class="text-5xl font-bold tracking-tight">
+                Gerritjan van der Sloot
+              </h1>
+
+              <UBadge
+                color="primary"
+                variant="soft"
+              >
+                Softwareontwikkelaar
+              </UBadge>
+            </div>
+
+            <p class="mt-6 max-w-2xl text-lg text-muted leading-8">
+              Hallo! Mijn naam is Gerritjan. Ik ben softwareontwikkelaar met een passie
+              voor moderne cloudoplossingen, .NET en Microsoft Azure. Ik vind het leuk om
+              complexe technische vraagstukken om te zetten in praktische en betrouwbare
+              oplossingen.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-lg text-muted leading-8">
+              Naast mijn werk ben ik plaatsvervangend raadslid voor de gemeente Assen.
+              Daar draag ik graag bij aan de lokale politiek en maatschappelijke vraagstukken.
+            </p>
+          </div>
+
+          <!-- Foto -->
+          <div class="flex justify-center lg:justify-end">
+            <img
+              src="~/assets/img/me.png"
+              alt="Portret van Gerritjan van der Sloot"
+              class="h-80 w-80 rounded-3xl object-cover shadow-2xl ring-1 ring-default"
+            >
+          </div>
+
+        </section>
+      </UContainer>
+
+      <!-- About -->
+      <section id="about">
+        <UContainer class="py-12">
+          <h2 class="text-3xl font-semibold mb-6">
+            Over mij
+          </h2>
+
+          <div class="max-w-3xl space-y-4 text-lg text-muted leading-8">
+
+            <p>
+              In het dagelijks leven werk ik als softwareontwikkelaar. Mijn
+              voornaamste interesse ligt bij het ontwikkelen van cloud-native
+              applicaties met .NET en Azure. Ik haal veel plezier uit het ontwerpen
+              van APIs, het verbeteren van softwarearchitectuur en het automatiseren
+              van deployments.
+            </p>
+
+            <p>
+              Ik heb een bachelor Artificial Intelligence afgerond en ben iemand die
+              graag blijft leren. Regelmatig verdiep ik mij in nieuwe technologieën,
+              Microsoft-certificeringen en persoonlijke projecten om mijn kennis
+              verder uit te breiden.
+            </p>
+
+            <p>
+              Buiten mijn werk ben ik actief als plaatsvervangend raadslid voor de
+              gemeente Assen. Het geeft mij de mogelijkheid om mij in te zetten voor
+              maatschappelijke onderwerpen en een bijdrage te leveren aan mijn
+              woonomgeving.
+            </p>
+
+          </div>
+
+        </UContainer>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <UContainer class="py-12">
+          <h2 class="text-3xl font-semibold mb-4">
+            Contact
+          </h2>
+
+          <p class="mb-6 max-w-2xl text-lg text-muted">
+            Heb je een vraag, wil je samenwerken of gewoon eens kennismaken?
+            Neem gerust contact met mij op.
+          </p>
+
+          <UButton
+            icon="i-lucide-mail"
+            to="mailto:hello@gerritjan.net"
+          >
+            hello@gerritjan.net
+          </UButton>
+        </UContainer>
+      </section>
+    </main>
+
+    <footer class="border-t border-default py-8">
+      <UContainer class="text-sm text-muted">
+        © {{ new Date().getFullYear() }} Gerritjan van der Sloot
+      </UContainer>
+    </footer>
   </div>
 </template>
