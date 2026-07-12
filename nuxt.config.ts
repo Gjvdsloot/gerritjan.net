@@ -5,28 +5,28 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ['/']
-    }
-  },
-
-  colorMode: {
-    preference: 'light'
-  },
-
   devtools: {
     enabled: true
   },
 
   css: ['~/assets/css/main.css'],
 
+  colorMode: {
+    preference: 'light'
+  },
+
   routeRules: {
     '/': { prerender: true }
   },
 
   compatibilityDate: '2026-06-30',
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
+  },
 
   eslint: {
     config: {
