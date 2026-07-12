@@ -7,7 +7,10 @@ const navigation = [
 </script>
 
 <template>
-  <div class="min-h-screen bg-default" id="home">
+  <div
+    id="home"
+    class="min-h-screen bg-default"
+  >
     <!-- Header -->
     <header class="sticky top-0 z-50 border-b border-default bg-default/80 backdrop-blur">
       <UContainer class="flex h-16 items-center justify-between">
@@ -19,7 +22,6 @@ const navigation = [
         </NuxtLink>
 
         <div class="flex items-center gap-6">
-
           <UNavigationMenu
             :items="navigation"
             orientation="horizontal"
@@ -59,7 +61,6 @@ const navigation = [
       <!-- Hero -->
       <UContainer class="py-20">
         <section class="grid items-center gap-12 lg:grid-cols-2">
-
           <!-- Tekst -->
           <div>
             <div class="flex flex-wrap items-center gap-4">
@@ -96,7 +97,6 @@ const navigation = [
               class="h-80 w-80 rounded-3xl object-cover shadow-2xl ring-1 ring-default"
             >
           </div>
-
         </section>
       </UContainer>
 
@@ -108,7 +108,6 @@ const navigation = [
           </h2>
 
           <div class="max-w-3xl space-y-4 text-lg text-muted leading-8">
-
             <p>
               In het dagelijks leven werk ik als softwareontwikkelaar. Mijn
               voornaamste interesse ligt bij het ontwikkelen van cloud-native
@@ -130,9 +129,7 @@ const navigation = [
               maatschappelijke onderwerpen en een bijdrage te leveren aan mijn
               woonomgeving.
             </p>
-
           </div>
-
         </UContainer>
       </section>
 
