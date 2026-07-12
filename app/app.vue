@@ -4,10 +4,11 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'canonical', href: siteUrl }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'nl'
   }
 })
 
@@ -19,7 +20,6 @@ useSeoMeta({
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: 'https://gerritjan.net/me.png',
   twitterCard: 'summary_large_image'
 })
 </script>
