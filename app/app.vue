@@ -1,4 +1,8 @@
 <script setup>
+const title = 'Gerritjan van der Sloot'
+const description = 'Softwareontwikkelaar met een passie voor moderne cloudoplossingen, .NET en Microsoft Azure.'
+const siteUrl = 'https://www.gerritjan.net'
+  
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -11,9 +15,6 @@ useHead({
     lang: 'nl'
   }
 })
-
-const title = 'Gerritjan van der Sloot'
-const description = 'Softwareontwikkelaar met een passie voor moderne cloudoplossingen, .NET en Microsoft Azure.'
 
 useSeoMeta({
   title,
