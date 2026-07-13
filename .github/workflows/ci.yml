@@ -32,3 +32,22 @@ jobs:
 
       - name: Typecheck
         run: pnpm run typecheck
+
+      - name: Generate static site
+        run: pnpm run build
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Upload website
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --auth-mode login \
+              --account-name gerritjan \
+              --destination '$web' \
+              --source .output/public \
+              --overwrite
